@@ -4,7 +4,6 @@ export default class CardColumn1 extends Component {
   render() {
     return (
       <div className="row mt-3  mb-3">
-        
         <div className="col-md-4">
           <div className="card">
             {/* <img src="" className="card-img-top" alt=""> */}

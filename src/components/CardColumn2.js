@@ -1,17 +1,28 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 export default class CardColumn2 extends Component {
   render() {
+    const quote = this.props.quote;
+
     return (
-      <div className="jumbotron jumbotron-fluid">
-          <div className="container mt-5 mb-5">
-            <h1 className="display-4">Fluid jumbotron</h1>
-            <p className="lead">
-              This is a modified jumbotron that occupies the entire horizontal
-              space of its parent.
-            </p>
+      <div className="col-lg-4 col-md-6">
+        <div className="card mb-2 mt-2">
+          <div className="card-header">Quote #{quote.id}</div>
+          <div className="card-body">
+            <blockquote className="blockquote">
+              <p>{quote.body}</p>
+              <footer className="blockquote-footer">
+                {quote.author}, <cite title="Source Title">{quote.title}</cite>
+              </footer>
+            </blockquote>
           </div>
         </div>
-    )
+      </div>
+    );
   }
+}
+
+CardColumn2.propTypes = {
+  quote: PropTypes.object.isRequired
 }
